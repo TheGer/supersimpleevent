@@ -6,11 +6,16 @@ public class SquareCreator : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    GameObject mysquare;
+    GameObject mysquare,mysquare2;
     void Start()
     {
         mysquare = Instantiate(Resources.Load<GameObject>("Prefabs/Square"),new Vector3(0f,0f),Quaternion.identity);
-        mysquare.AddComponent<SquareController>();
+
+
+        mysquare2 = Instantiate(Resources.Load<GameObject>("Prefabs/Square"), new Vector3(1f, 1f), Quaternion.identity);
+
+        mysquare.AddComponent<squareListener>();
+        mysquare2.AddComponent<squareListener>();
         StartCoroutine(disableSquare());
     }
 

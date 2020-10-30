@@ -7,4 +7,7 @@ public class testScriptableObject : ScriptableObject
     public int numberInfo;
     public string stringInfo;
     public bool BoolInfo;
+    public GameObject myobject;
+
+
 }
