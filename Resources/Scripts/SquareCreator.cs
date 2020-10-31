@@ -14,8 +14,8 @@ public class SquareCreator : MonoBehaviour
 
         mysquare2 = Instantiate(Resources.Load<GameObject>("Prefabs/Square"), new Vector3(1f, 1f), Quaternion.identity);
 
-        mysquare.AddComponent<squareListener>();
-        mysquare2.AddComponent<squareListener>();
+        mysquare.AddComponent<squareController>();
+        mysquare2.AddComponent<squareController>();
         StartCoroutine(disableSquare());
     }
 

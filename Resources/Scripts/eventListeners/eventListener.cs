@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class movementController : MonoBehaviour
+public class eventListener : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -11,7 +11,7 @@ public class movementController : MonoBehaviour
     private UnityAction<string> moveDownListener;
     private UnityAction<string> moveLeftListener;
     private UnityAction<string> moveRightListener;
-    testScriptableObject objVars;
+    scriptedObject objVars;
 
 
     void Awake()
@@ -20,7 +20,7 @@ public class movementController : MonoBehaviour
         moveDownListener = new UnityAction<string>(moveDown);
         moveLeftListener = new UnityAction<string>(moveLeft);
         moveRightListener = new UnityAction<string>(moveRight);
-        objVars = ScriptableObject.CreateInstance<testScriptableObject>();
+        objVars = ScriptableObject.CreateInstance<scriptedObject>();
 
     }
 
@@ -43,7 +43,7 @@ public class movementController : MonoBehaviour
     void moveUp(string jsonvar)
     {
         // Debug.Log("Zobbi"+jsonvar);
-        testScriptableObject obj = new testScriptableObject();
+        scriptedObject obj = new scriptedObject();
         JsonUtility.FromJsonOverwrite(jsonvar,obj);
 
         obj.myobject.transform.position += new Vector3(0f, 1f);
@@ -52,7 +52,7 @@ public class movementController : MonoBehaviour
 
     void moveDown(string jsonvar)
     {
-         testScriptableObject obj = new testScriptableObject();
+        scriptedObject obj = new scriptedObject();
         JsonUtility.FromJsonOverwrite(jsonvar, obj);
         obj.myobject.transform.position -= new Vector3(0f, 1f);
 
@@ -60,7 +60,7 @@ public class movementController : MonoBehaviour
     }
     void moveLeft(string jsonvar)
     {
-        testScriptableObject obj = new testScriptableObject();
+        scriptedObject obj = new scriptedObject();
         JsonUtility.FromJsonOverwrite(jsonvar, obj);
 
         obj.myobject.transform.position -= new Vector3(1f, 0f);
@@ -70,7 +70,7 @@ public class movementController : MonoBehaviour
     void moveRight(string jsonvar)
     {
         // Debug.Log("Zobbi"+jsonvar);
-        testScriptableObject obj = new testScriptableObject();
+        scriptedObject obj = new scriptedObject();
         JsonUtility.FromJsonOverwrite(jsonvar, obj);
 
         obj.myobject.transform.position += new Vector3(1f, 0f);

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class squareListener : MonoBehaviour
+public class squareController : MonoBehaviour
 {
     // Start is called before the first frame update
-    testScriptableObject objVars;
+    scriptedObject objVars;
 
     void Start()
     {
-        objVars = ScriptableObject.CreateInstance<testScriptableObject>();
+        objVars = ScriptableObject.CreateInstance<scriptedObject>();
         objVars.myobject = this.gameObject;
     }
 
